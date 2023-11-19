@@ -1,0 +1,36 @@
+{
+    "name": "respinar/contao-tableofcontents",
+    "description": "Table of Contents for Contao",
+    "type": "contao-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hamid Peywasti",
+            "email": "hamid@respinar.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "contao/core-bundle": "^4.13 || ^5.0"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.0"
+    },
+    "conflict": {
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Respinar\\ContaoTocBundle\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "contao/manager-plugin": true
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "Respinar\\ContaoTocBundle\\ContaoManager\\Plugin"
+    }
+}
