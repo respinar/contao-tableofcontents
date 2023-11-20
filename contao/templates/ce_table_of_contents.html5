@@ -1,0 +1,10 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+  <div id="toc" role="doc-toc">
+    <span id="toc-heading">
+        Table of Contents
+    </span>
+    <!--<input type="checkbox" id="toc-checkbox">-->
+  </div>
+<?php $this->endblock(); ?>
