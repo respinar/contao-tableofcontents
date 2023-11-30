@@ -3,8 +3,11 @@
 <?php $this->block('content'); ?>
   <div id="toc" role="doc-toc">
     <span id="toc-heading">
-        Table of Contents
+        <?= $this->tocTitle; ?>
     </span>
     <!--<input type="checkbox" id="toc-checkbox">-->
   </div>
+  <script>
+    toc("<?= $this->className; ?>","<?= $this->headingSelector; ?>");
+  </script>
 <?php $this->endblock(); ?>
