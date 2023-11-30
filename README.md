@@ -1,6 +1,8 @@
 # Table of Contents for Contao
 This Contao Extenstion adds a table of contents to the article using JavaScript. It is based on the class name for example "layout_full". It creates a table by searching for h2 and h3 headings.
 
+This extenstion based on https://techindetail.com/table-of-contents-javascript/
+
 ## Table of contents
 Table of contents (TOC) is the list of all the headings in a blog post or an article with a link to each of these headings.
 
