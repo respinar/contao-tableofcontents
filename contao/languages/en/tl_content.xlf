@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.1">
+  <file datatype="php" source-language="en">
+    <body>
+      <trans-unit id="tl_content.toc_title.0">
+        <source>Title of Table</source>
+      </trans-unit>
+      <trans-unit id="tl_content.toc_title.1">
+        <source>Add a custom title.</source>
+      </trans-unit>
+      <trans-unit id="tl_content.toc_className.0">
+        <source>CSS Class name</source>
+      </trans-unit>
+      <trans-unit id="tl_content.toc_className.1">
+        <source>Enter a css class name.</source>
+      </trans-unit>
+       <trans-unit id="tl_content.toc_headingSelector.0">
+        <source>Headings</source>
+      </trans-unit>
+      <trans-unit id="tl_content.toc_headingSelector.1">
+        <source>Select headings that want to be in table.</source>
+      </trans-unit>
+      <trans-unit id="tl_content.toc_legend">
+        <source>Table of Contents</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
