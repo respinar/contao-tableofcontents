@@ -1,0 +1,10 @@
+
+  <div id="toc" role="doc-toc">
+    <span id="toc-heading"><?= $this->title; ?></span>
+    <div class="tl_gray">
+      <span>Headings: <b><?= $this->headings ?></b></span>
+      in
+      <span>Class: <b><?= $this->className ?></b></span>
+    </div>
+  </div>
+
