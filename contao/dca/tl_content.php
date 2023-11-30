@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['table_of_contents'] = '
     {type_legend},type,headline;
-    {toc_config},toc_title,toc_className,toc_headingSelector;
+    {toc_legend},toc_title,toc_className,toc_headingSelector;
     {template_legend:hide},customTpl;
     {protected_legend:hide},protected;
     {expert_legend:hide},guests,cssID;
