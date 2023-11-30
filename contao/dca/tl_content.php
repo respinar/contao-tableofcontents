@@ -30,7 +30,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['toc_headingSelector'] = array
 (
 	'exclude'       => true,
     'inputType'     => 'select',
-    'options'       => array('h2', 'h2,h3', 'h2,h3,h4', 'h2,h3,h4,h5', 'h2,h3,h4,h5,h6'),
+    'options'       => array('h2', 'h2,h3'),
     'default'       => 'h2,h3',
     'eval'          => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
     'sql'           => "varchar(255) NOT NULL default ''"
