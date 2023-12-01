@@ -19,10 +19,11 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['toc_title'] = array(
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['toc_articleSelector'] = array(
-	'exclude'       => true,
-    'inputType'     => 'text',
-    'eval'          => array('multiple'=>true, 'size'=>2, 'tl_class'=>'w50 clr'),
-    'sql'           => "varchar(255) NOT NULL default ''"
+    'exclude'                 => true,
+    'inputType'               => 'inputUnit',
+    'options'                 => array('id', 'class'),
+    'eval'                    => array('tl_class'=>'w50 clr'),
+    'sql'                     => "varchar(255) NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:2:\"id\";}'"
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['toc_headingSelector'] = array
