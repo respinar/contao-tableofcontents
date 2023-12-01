@@ -37,7 +37,9 @@ class TableOfContentsController extends AbstractContentElementController
             $articleSelector = 'main';
         }
 
-        $template->tocTitle = $model->toc_title;
+        $arrHeadline = StringUtil::deserialize($model->headline);
+
+        $template->tocTitle = $arrHeadline['value'];
         $template->selectorType = $selectorType;
         $template->articleSelector = $articleSelector;
         $template->headingSelector = $model->toc_headingSelector;
