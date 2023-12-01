@@ -48,10 +48,6 @@ class TableOfContentsController extends AbstractContentElementController
 		{
 
 			$template->setName('be_table_of_contents');
-			$template->title = $model->toc_title;
-            $template->selectorType = $selectorType;
-            $template->articleSelector = $articleSelector;
-            $template->headingSelector = $model->toc_headingSelector;
 
 			return $template->getResponse();
 		}
