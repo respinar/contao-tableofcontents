@@ -29,18 +29,12 @@ class TableOfContentsController extends AbstractContentElementController
 
         $arrSelector = StringUtil::deserialize($model->toc_articleSelector);
 
-        if ($arrSelector[1] != '') {
-            $selectorType = 'class';
-            $articleSelector = $arrSelector[1];
-        }
-        if ($arrSelector[0] != '') {
-            $selectorType = 'id';
-            $articleSelector = $arrSelector[0];
-        }
+        $selectorType = $arrSelector['unit'];
+        $articleSelector = $arrSelector['value'];
 
-        if ($selectorType == '') {
+        if ($articleSelector == '') {
             $selectorType = 'id';
-            $articleSelector = "main";
+            $articleSelector = 'main';
         }
 
         $template->tocTitle = $model->toc_title;
