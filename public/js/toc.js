@@ -3,10 +3,20 @@
  --- TechinDetail.com ------
 */
 
-function toc(className, headingSelector) {
+function toc(selectorType,articleSelector, headingSelector) {
   window.addEventListener("DOMContentLoaded", (event) => {
-    const article = document.getElementsByClassName(className)[0];
-    const headings = article.querySelectorAll(headingSelector);
+
+    let headings;
+
+    if (selectorType == 'id') {
+      const article = document.getElementById(articleSelector);
+      headings = article.querySelectorAll(headingSelector);
+
+    } else {
+      article = document.getElementsByClassName(articleSelector)[0];
+      headings = article.querySelectorAll(headingSelector);
+    }
+
     const toc = document.getElementById("toc");
     const totalHeadings = headings.length;
 
