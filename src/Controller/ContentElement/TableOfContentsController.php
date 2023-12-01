@@ -15,6 +15,7 @@ namespace Respinar\ContaoTocBundle\Controller\ContentElement;
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\StringUtil;
 use Contao\System;
 use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,8 +27,25 @@ class TableOfContentsController extends AbstractContentElementController
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
 
+        $arrSelector = StringUtil::deserialize($model->toc_articleSelector);
+
+        if ($arrSelector[1] != '') {
+            $selectorType = 'class';
+            $articleSelector = $arrSelector[1];
+        }
+        if ($arrSelector[0] != '') {
+            $selectorType = 'id';
+            $articleSelector = $arrSelector[0];
+        }
+
+        if ($selectorType == '') {
+            $selectorType = 'id';
+            $articleSelector = "main";
+        }
+
         $template->tocTitle = $model->toc_title;
-        $template->className = $model->toc_className;
+        $template->selectorType = $selectorType;
+        $template->articleSelector = $articleSelector;
         $template->headingSelector = $model->toc_headingSelector;
 
         $request = System::getContainer()->get('request_stack')->getCurrentRequest();
@@ -37,8 +55,9 @@ class TableOfContentsController extends AbstractContentElementController
 
 			$template->setName('be_table_of_contents');
 			$template->title = $model->toc_title;
-			$template->className = $model->toc_className;
-			$template->headings = $model->toc_headingSelector;
+            $template->selectorType = $selectorType;
+            $template->articleSelector = $articleSelector;
+            $template->headingSelector = $model->toc_headingSelector;
 
 			return $template->getResponse();
 		}
