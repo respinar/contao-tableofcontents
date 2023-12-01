@@ -8,6 +8,6 @@
     <!--<input type="checkbox" id="toc-checkbox">-->
   </div>
   <script>
-    toc("<?= $this->className; ?>","<?= $this->headingSelector; ?>");
+    toc("<?= $this->selectorType; ?>","<?= $this->articleSelector; ?>","<?= $this->headingSelector; ?>");
   </script>
 <?php $this->endblock(); ?>
