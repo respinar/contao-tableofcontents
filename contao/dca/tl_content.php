@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['table_of_contents'] = '
     {type_legend},type,headline;
-    {toc_legend},toc_title,toc_className,toc_headingSelector;
+    {toc_legend},toc_title,toc_articleSelector,toc_headingSelector;
     {template_legend:hide},customTpl;
     {protected_legend:hide},protected;
     {expert_legend:hide},guests,cssID;
@@ -18,11 +18,10 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['toc_title'] = array(
     'sql'           => "varchar(255) NOT NULL default ''"
 );
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['toc_className'] = array(
+$GLOBALS['TL_DCA']['tl_content']['fields']['toc_articleSelector'] = array(
 	'exclude'       => true,
     'inputType'     => 'text',
-    'default'       => 'layout_full',
-    'eval'          => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50 clr'),
+    'eval'          => array('multiple'=>true, 'size'=>2, 'tl_class'=>'w50 clr'),
     'sql'           => "varchar(255) NOT NULL default ''"
 );
 
