@@ -8,11 +8,11 @@
       <trans-unit id="tl_content.toc_title.1">
         <source>Add a custom title.</source>
       </trans-unit>
-      <trans-unit id="tl_content.toc_className.0">
-        <source>CSS Class name</source>
+      <trans-unit id="tl_content.toc_articleSelector.0">
+        <source>Article selector</source>
       </trans-unit>
-      <trans-unit id="tl_content.toc_className.1">
-        <source>Enter a css class name.</source>
+      <trans-unit id="tl_content.toc_articleSelector.1">
+        <source>Enter a css id or class name. The priority is with id. Leave empty to use #main.</source>
       </trans-unit>
        <trans-unit id="tl_content.toc_headingSelector.0">
         <source>Headings</source>
