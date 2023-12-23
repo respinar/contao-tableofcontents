@@ -27,15 +27,31 @@ function toc(selectorType,articleSelector, headingSelector) {
     let subLi = null;
     let isSibling = false;
 
+    let h2Index = 0;
+    let h3Index = 1;
+
     if (totalHeadings > 1) {
       for (let element of headings) {
         let anchor = document.createElement("a");
-        let anchorText = element.innerText;
+        let anchorText = element.textContent;
         anchor.innerText = anchorText;
-        let elementId = anchorText.replaceAll(" ", "-").toLowerCase();
-        anchor.href = window.location.pathname + "#" + elementId;
-        element.id = elementId;
+        //let elementId = anchorText.replaceAll(" ", "-").toLowerCase();
         let level = element.nodeName;
+
+        let elementId;
+
+        if ("H2" === level) {
+          h2Index++;
+          elementId = "toc-" + h2Index;
+          h3Index = 1;
+        }
+        if ("H3" === level) {
+        elementId = "toc-" + h2Index + "-" + h3Index++;
+        }
+
+        element.id = elementId;
+
+        anchor.href = window.location.pathname + "#" + elementId;
 
         if ("H3" === level) {
           if (mainLi) {
