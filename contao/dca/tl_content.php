@@ -11,20 +11,19 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['table_of_contents'] = '
     {invisible_legend:hide},invisible,start,stop
 ';
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['toc_articleSelector'] = array(
+$GLOBALS['TL_DCA']['tl_content']['fields']['toc_articleSelector'] = [
     'exclude'                 => true,
     'inputType'               => 'inputUnit',
-    'options'                 => array('id', 'class'),
-    'eval'                    => array('tl_class'=>'w50 clr'),
+    'options'                 => ['id', 'class'],
+    'eval'                    => ['tl_class' => 'w50 clr'],
     'sql'                     => "varchar(255) NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:2:\"id\";}'"
-);
+];
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['toc_headingSelector'] = array
-(
+$GLOBALS['TL_DCA']['tl_content']['fields']['toc_headingSelector'] = [
 	'exclude'       => true,
     'inputType'     => 'select',
-    'options'       => array('h2', 'h2,h3'),
+    'options'       => ['h2', 'h2,h3'],
     'default'       => 'h2,h3',
-    'eval'          => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+    'eval'          => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
     'sql'           => "varchar(255) NOT NULL default ''"
-);
+];
