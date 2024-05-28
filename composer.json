@@ -23,7 +23,7 @@
         "psr-4": {
             "Respinar\\ContaoTocBundle\\": "src/"
         }
-    },
+    },    
     "extra": {
         "contao-manager-plugin": "Respinar\\ContaoTocBundle\\ContaoManager\\Plugin"
     }
