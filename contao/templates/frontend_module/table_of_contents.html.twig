@@ -1,0 +1,14 @@
+{% block content %}
+  
+  <div id="toc" class="table-of-contents" role="doc-toc">
+    <{{headline.tag_name}} class="table-of-contents__heading">
+      {{ headline.text }}
+    </{{headline.tag_name}}>
+    {# <input type="checkbox" id="toc-checkbox"> #}
+  </div>
+  
+  <script>
+    toc("{{ selectorType }}", "{{ articleSelector }}", "{{ headingSelector }}");
+  </script>
+  
+{% endblock %}
