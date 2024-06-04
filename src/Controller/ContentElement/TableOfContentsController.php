@@ -30,22 +30,12 @@ class TableOfContentsController extends AbstractContentElementController
 
         $arrSelector = StringUtil::deserialize($model->toc_articleSelector);
 
-        $selectorType = $arrSelector['unit'];
-        $articleSelector = $arrSelector['value'];
+        $selectorType = $arrSelector['unit'] ?? "id";
+        $articleSelector = $arrSelector['value'] ?? "main";
 
-        if ($articleSelector == '') {
-            $selectorType = 'id';
-            $articleSelector = 'main';
-        }
-
-        $arrHeadline = StringUtil::deserialize($model->headline);
-
-        $template->tocTitle = $arrHeadline['value'];
-        $template->selectorType = $selectorType;
-        $template->articleSelector = $articleSelector;
-        $template->headingSelector = $model->toc_headingSelector;
-
-        $request = System::getContainer()->get('request_stack')->getCurrentRequest();
+        $template->set('selectorType', $selectorType);
+        $template->set('articleSelector', $articleSelector);
+        $template->set('headingSelector', $model->toc_headingSelector);
 
 		if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request))
 		{
