@@ -22,7 +22,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement(category: 'includes', template: 'ce_table_of_contents')]
+#[AsContentElement(category: 'includes')]
 class TableOfContentsController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
