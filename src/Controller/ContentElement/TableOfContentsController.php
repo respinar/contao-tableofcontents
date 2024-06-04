@@ -25,7 +25,7 @@ use Symfony\Component\HttpFoundation\Response;
 #[AsContentElement(category: 'includes')]
 class TableOfContentsController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
 
         $arrSelector = StringUtil::deserialize($model->toc_articleSelector);
