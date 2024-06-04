@@ -41,8 +41,8 @@ class TableOfContentsController extends AbstractContentElementController
             return $template->getResponse();
         }
 
-        $GLOBALS['TL_HEAD'][] = Template::generateScriptTag('bundles/respinarcontaotoc/js/toc.js', false, null);
-        $GLOBALS['TL_HEAD'][] = Template::generateStyleTag('bundles/respinarcontaotoc/css/toc.css', false, null);
+        $GLOBALS['TL_CSS'][] = 'bundles/respinarcontaotoc/css/toc.css';
+        $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/respinarcontaotoc/js/toc.js';
 
         return $template->getResponse();
     }
