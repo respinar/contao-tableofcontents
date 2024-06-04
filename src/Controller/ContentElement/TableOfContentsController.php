@@ -37,13 +37,9 @@ class TableOfContentsController extends AbstractContentElementController
         $template->set('articleSelector', $articleSelector);
         $template->set('headingSelector', $model->toc_headingSelector);
 
-		if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request))
-		{
-
-			$template->setName('be_table_of_contents');
-
-			return $template->getResponse();
-		}
+		if($this->isBackendScope($request)) {
+            return $template->getResponse();
+        }
 
         $GLOBALS['TL_HEAD'][] = Template::generateScriptTag('bundles/respinarcontaotoc/js/toc.js', false, null);
         $GLOBALS['TL_HEAD'][] = Template::generateStyleTag('bundles/respinarcontaotoc/css/toc.css', false, null);
