@@ -25,7 +25,7 @@ use Symfony\Component\HttpFoundation\Response;
 #[AsFrontendModule(category: 'miscellaneous')]
 class TableOfContentsController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         $arrSelector = StringUtil::deserialize($model->toc_articleSelector);
 
