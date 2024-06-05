@@ -29,33 +29,15 @@ class TableOfContentsController extends AbstractFrontendModuleController
     {
         $arrSelector = StringUtil::deserialize($model->toc_articleSelector);
 
-        $selectorType = $arrSelector['unit'];
-        $articleSelector = $arrSelector['value'];
+        $selectorType = $arrSelector['unit'] ?? "id";
+        $articleSelector = $arrSelector['value'] ?? "main";
 
-        if ($articleSelector == '') {
-            $selectorType = 'id';
-            $articleSelector = 'main';
-        }
-
-        $arrHeadline = StringUtil::deserialize($model->headline);
-
-        $template->tocTitle = $arrHeadline['value'];
-        $template->selectorType = $selectorType;
-        $template->articleSelector = $articleSelector;
-        $template->headingSelector = $model->toc_headingSelector;
-
-        $request = System::getContainer()->get('request_stack')->getCurrentRequest();
-
-		if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request))
-		{
-
-			$template->setName('be_table_of_contents');
-
-			return $template->getResponse();
-		}
-
-        $GLOBALS['TL_HEAD'][] = Template::generateScriptTag('bundles/respinarcontaotoc/js/toc.js', false, null);
-        $GLOBALS['TL_HEAD'][] = Template::generateStyleTag('bundles/respinarcontaotoc/css/toc.css', false, null);
+        $template->set('selectorType', $selectorType);
+        $template->set('articleSelector', $articleSelector);
+        $template->set('headingSelector', $model->toc_headingSelector);
+    
+        $GLOBALS['TL_CSS'][] = 'bundles/respinarcontaotoc/css/toc.css';
+        $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/respinarcontaotoc/js/toc.js';
 
         return $template->getResponse();
     }
