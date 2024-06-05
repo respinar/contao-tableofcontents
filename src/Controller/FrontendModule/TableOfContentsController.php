@@ -22,7 +22,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsFrontendModule(category: 'miscellaneous', template: 'mod_table_of_contents')]
+#[AsFrontendModule(category: 'miscellaneous')]
 class TableOfContentsController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
