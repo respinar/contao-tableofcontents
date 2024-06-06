@@ -36,7 +36,7 @@ class TableOfContentsController extends AbstractFrontendModuleController
         $template->set('articleSelector', $articleSelector);
         $template->set('headingSelector', $model->toc_headingSelector);
     
-        $GLOBALS['TL_CSS'][] = 'bundles/respinarcontaotoc/css/toc.css';
+        // $GLOBALS['TL_CSS'][] = 'bundles/respinarcontaotoc/css/toc.css';
         $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/respinarcontaotoc/js/toc.js';
 
         return $template->getResponse();
