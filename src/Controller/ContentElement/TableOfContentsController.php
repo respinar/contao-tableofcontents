@@ -37,10 +37,6 @@ class TableOfContentsController extends AbstractContentElementController
         $template->set('articleSelector', $articleSelector);
         $template->set('headingSelector', $model->toc_headingSelector);
 
-		if($this->isBackendScope($request)) {
-            return $template->getResponse();
-        }
-
         $GLOBALS['TL_CSS'][] = 'bundles/respinarcontaotoc/css/toc.css';
         $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/respinarcontaotoc/js/toc.js';
 
