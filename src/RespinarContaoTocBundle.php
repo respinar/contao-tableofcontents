@@ -13,20 +13,17 @@ declare(strict_types=1);
 namespace Respinar\ContaoTocBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-class RespinarContaoTocBundle extends Bundle
+class RespinarContaoTocBundle extends AbstractBundle
 {
-    public function getPath(): string
+    public function loadExtension(
+        array $config, 
+        ContainerConfigurator $containerConfigurator, 
+        ContainerBuilder $containerBuilder,
+    ): void
     {
-        return \dirname(__DIR__);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function build(ContainerBuilder $container): void
-    {
-        parent::build($container);
+        $containerConfigurator->import('../config/services.yaml');
     }
 }
