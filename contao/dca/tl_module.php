@@ -22,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['toc_headingSelector'] = [
 	'exclude'       => true,
     'inputType'     => 'select',
     'options'       => ['h2', 'h2,h3'],
-    'default'       => 'h2,h3',
+    'default'       => 'h2',
     'eval'          => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
     'sql'           => "varchar(255) NOT NULL default ''"
 ];
