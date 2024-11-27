@@ -15,7 +15,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['toc_articleSelector'] = [
     'inputType'               => 'inputUnit',
     'options'                 => ['class', 'id'],
     'eval'                    => ['tl_class' => 'w50 clr'],
-    'sql'                     => "varchar(255) NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:2:\"id\";}'"
+    'sql'                     => "varchar(255) NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:5:\"class\";}s'"
 ];
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['toc_headingSelector'] = [
