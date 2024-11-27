@@ -10,13 +10,14 @@ function toc(selectorType,articleSelector, headingSelector) {
 
     if (selectorType == 'id') {
       const article = document.getElementById(articleSelector);
-      headings = article.querySelectorAll(headingSelector);
-
+      headings = Array.from(article.querySelectorAll(headingSelector))
+        .filter(heading => !heading.closest('.content-table-of-contents'));
     } else {
-      article = document.getElementsByClassName(articleSelector)[0];
-      headings = article.querySelectorAll(headingSelector);
+      const article = document.getElementsByClassName(articleSelector)[0];
+      headings = Array.from(article.querySelectorAll(headingSelector))
+        .filter(heading => !heading.closest('.content-table-of-contents'));
     }
-
+    
     const toc = document.getElementById("toc");
     const totalHeadings = headings.length;
 
