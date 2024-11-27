@@ -14,7 +14,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['table_of_contents'] = '
 $GLOBALS['TL_DCA']['tl_content']['fields']['toc_articleSelector'] = [
     'exclude'                 => true,
     'inputType'               => 'inputUnit',
-    'options'                 => ['id', 'class'],
+    'options'                 => ['class', 'id'],
     'eval'                    => ['tl_class' => 'w50 clr'],
     'sql'                     => "varchar(255) NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:2:\"id\";}'"
 ];
