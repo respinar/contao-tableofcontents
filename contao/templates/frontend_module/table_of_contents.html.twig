@@ -1,14 +1,12 @@
+{% extends "@Contao/frontend_module/_base.html.twig" %}
+
 {% block content %}
-  
-  <div id="toc" class="table-of-contents" role="doc-toc">
-    <{{headline.tag_name}} class="table-of-contents__heading">
-      {{ headline.text }}
-    </{{headline.tag_name}}>
+
+  <nav id="toc" aria-label="Table of Contents">
     {# <input type="checkbox" id="toc-checkbox"> #}
-  </div>
-  
+  </nav>
   <script>
     toc("{{ selectorType }}", "{{ articleSelector }}", "{{ headingSelector }}");
   </script>
-  
+ 
 {% endblock %}
