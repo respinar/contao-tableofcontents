@@ -1,18 +1,20 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+
 {% block content %}
-  
-  <div id="toc" class="table-of-contents" role="doc-toc">
-    <{{headline.tag_name}} class="table-of-contents__heading">
-      {{ headline.text }}
-    </{{headline.tag_name}}>
-    {# <input type="checkbox" id="toc-checkbox"> #}
-  </div>
 
   {% if as_editor_view %}
-    <p>{{ selectorType }}="{{ articleSelector }}" -> <strong>{{ headingSelector }}</strong></p>  
+
+    <p>{{ selectorType }}="{{ articleSelector }}" -> <strong>{{ headingSelector }}</strong></p>
+
   {% else %}
+  
+    <nav id="toc" aria-label="Table of Contents">
+      {# <input type="checkbox" id="toc-checkbox"> #}
+    </nav>
     <script>
       toc("{{ selectorType }}", "{{ articleSelector }}", "{{ headingSelector }}");
     </script>
+
   {% endif %}
   
 {% endblock %}
