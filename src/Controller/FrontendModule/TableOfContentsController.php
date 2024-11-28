@@ -17,8 +17,6 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
 use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
 use Contao\StringUtil;
-use Contao\System;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
