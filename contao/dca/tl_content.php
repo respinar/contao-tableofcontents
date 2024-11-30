@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['table_of_contents'] = '
-    {type_legend},type,headline;
-    {toc_legend},toc_articleSelector,toc_headingSelector;
+    {type_legend},type;
+    {toc_legend},toc_headline,toc_articleSelector,toc_headingSelector;
     {template_legend:hide},customTpl;
     {protected_legend:hide},protected;
     {expert_legend:hide},guests,cssID;
