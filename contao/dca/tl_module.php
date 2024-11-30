@@ -10,6 +10,13 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['table_of_contents'] = '
     {expert_legend:hide},guests,cssID
 ';
 
+$GLOBALS['TL_DCA']['tl_module']['fields']['toc_headline'] = [
+    'exclude'                 => true,
+    'inputType'               => 'text',
+    'eval'                    => ['maxlength'=>255, 'tl_class' => 'w50 clr'],
+    'sql'                     => "varchar(255) NOT NULL default ''"
+];
+
 $GLOBALS['TL_DCA']['tl_module']['fields']['toc_articleSelector'] = [
     'exclude'                 => true,
     'inputType'               => 'inputUnit',
