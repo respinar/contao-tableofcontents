@@ -11,6 +11,14 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['table_of_contents'] = '
     {invisible_legend:hide},invisible,start,stop
 ';
 
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['toc_headline'] = [
+    'exclude'                 => true,
+    'inputType'               => 'text',
+    'eval'                    => ['maxlength'=>255, 'tl_class' => 'w50 clr'],
+    'sql'                     => "varchar(255) NOT NULL default ''"
+];
+
 $GLOBALS['TL_DCA']['tl_content']['fields']['toc_articleSelector'] = [
     'exclude'                 => true,
     'inputType'               => 'inputUnit',
