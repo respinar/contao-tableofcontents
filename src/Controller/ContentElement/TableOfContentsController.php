@@ -31,6 +31,7 @@ class TableOfContentsController extends AbstractContentElementController
         $selectorType = $arrSelector['unit'] ?? "id";
         $articleSelector = $arrSelector['value'] ?? "main";
 
+        $template->set('toc_headline', $model->toc_headline);
         $template->set('selectorType', $selectorType);
         $template->set('articleSelector', $articleSelector);
         $template->set('headingSelector', $model->toc_headingSelector);
