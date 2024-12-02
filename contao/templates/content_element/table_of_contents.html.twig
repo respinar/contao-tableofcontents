@@ -1,20 +1,31 @@
-{% extends "@Contao/content_element/_base.html.twig" %}
+{# {% extends "@Contao/content_element/_base.html.twig" %} #}
 
-{% block content %}
+{% block toc %}
 
-  {% if as_editor_view %}
+  {% set attributes = attrs()
+    .setIfExists('id', element_html_id)
+    .addClass([element_css_classes, "content-#{type|replace({'_': '-'})}"])
+    .mergeWith(attributes|default)
+  %}
 
-    <p>{{ selectorType }}="{{ articleSelector }}" -> <strong>{{ headingSelector }}</strong></p>
+  <{% block toc_tag %}div{% endblock %}{% block attributes %}{{ attributes }}{% endblock %}>
 
-  {% else %}
-  
-    <nav id="toc" aria-label="Table of Contents">
-      {# <input type="checkbox" id="toc-checkbox"> #}
-    </nav>
-    <script>
-      toc("{{ selectorType }}", "{{ articleSelector }}", "{{ headingSelector }}");
-    </script>
+    <div class="toc__title">{{ toc_headline }}</div>
+
+    {% if as_editor_view %}
+
+      <p>{{ selectorType }}="{{ articleSelector }}" -> <strong>{{ headingSelector }}</strong></p>
+
+    {% else %}
+      
+      <nav id="toc" class="toc__nav" aria-label="Table of Contents">
+        {# <input type="checkbox" id="toc-checkbox"> #}
+      </nav>
+      <script>
+        toc("{{ selectorType }}", "{{ articleSelector }}", "{{ headingSelector }}");
+      </script>
 
   {% endif %}
-  
+
+  </{{ block('toc_tag') }}>  
 {% endblock %}
