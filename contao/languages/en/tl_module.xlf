@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.1">
+  <file datatype="php" source-language="en">
+    <body>
+      <trans-unit id="tl_module.toc_legend">
+        <source>Table of Contents</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
