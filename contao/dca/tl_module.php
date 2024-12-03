@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+use Contao\Controller;
+use Contao\System;
+
+Controller::loadDataContainer('tl_content');
+System::loadLanguageFile('tl_content');
+
 $GLOBALS['TL_DCA']['tl_module']['palettes']['table_of_contents'] = '
     {type_legend},name,type;
     {toc_legend},toc_headline,toc_articleSelector,toc_headingSelector;
