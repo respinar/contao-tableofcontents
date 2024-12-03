@@ -8,6 +8,12 @@
       <trans-unit id="CTE.table_of_contents.1">
         <source>Add a table of Contents to the page.</source>
       </trans-unit>
+      <trans-unit id="FMD.table_of_contents.0">
+        <source>Table of Contents</source>
+      </trans-unit>
+      <trans-unit id="FMD.table_of_contents.1">
+        <source>Add a table of Contents to the page.</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>
