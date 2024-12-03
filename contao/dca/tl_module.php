@@ -10,26 +10,6 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['table_of_contents'] = '
     {expert_legend:hide},guests,cssID
 ';
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['toc_headline'] = [
-    'exclude'                 => true,
-    'inputType'               => 'text',
-    'eval'                    => ['maxlength'=>255, 'tl_class' => 'w50 clr'],
-    'sql'                     => "varchar(255) NOT NULL default ''"
-];
-
-$GLOBALS['TL_DCA']['tl_module']['fields']['toc_articleSelector'] = [
-    'exclude'                 => true,
-    'inputType'               => 'inputUnit',
-    'options'                 => ['class', 'id'],
-    'eval'                    => ['tl_class' => 'w50 clr'],
-    'sql'                     => "varchar(255) NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:5:\"class\";}s'"
-];
-
-$GLOBALS['TL_DCA']['tl_module']['fields']['toc_headingSelector'] = [
-	'exclude'       => true,
-    'inputType'     => 'select',
-    'options'       => ['h2', 'h2,h3'],
-    'default'       => 'h2',
-    'eval'          => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
-    'sql'           => "varchar(255) NOT NULL default ''"
-];
+$GLOBALS['TL_DCA']['tl_module']['fields']['toc_headline'] = &$GLOBALS['TL_DCA']['tl_content']['fields']['toc_headline'];
+$GLOBALS['TL_DCA']['tl_module']['fields']['toc_articleSelector'] = &$GLOBALS['TL_DCA']['tl_content']['fields']['toc_articleSelector'];
+$GLOBALS['TL_DCA']['tl_module']['fields']['toc_headingSelector'] = &$GLOBALS['TL_DCA']['tl_content']['fields']['toc_headingSelector'];
