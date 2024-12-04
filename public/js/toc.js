@@ -10,12 +10,10 @@ function toc(selectorType,articleSelector, headingSelector) {
 
     if (selectorType == 'id') {
       const article = document.getElementById(articleSelector);
-      headings = Array.from(article.querySelectorAll(headingSelector))
-        .filter(heading => !heading.closest('.content-table-of-contents'));
+      headings = Array.from(article.querySelectorAll(headingSelector));
     } else {
       const article = document.getElementsByClassName(articleSelector)[0];
-      headings = Array.from(article.querySelectorAll(headingSelector))
-        .filter(heading => !heading.closest('.content-table-of-contents'));
+      headings = Array.from(article.querySelectorAll(headingSelector));
     }
     
     const toc = document.getElementById("toc");
